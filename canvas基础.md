@@ -75,13 +75,13 @@ Canvas 对象表示一个 HTML 画布元素 - `canvas`。它没有自己的行�
 | -- | --|
 |   [rect()](#rect)  | 创建矩形 |
 |   [fillRect()](#fillRect)  |   绘制“被填充”的矩形  |
-|   strokeRect()    |   绘制矩形（无填充）  |
-|   clearRect() |   在给定的矩形内清除指定的像素    |
+|   [strokeRect()](#strokeRect)    |   绘制矩形（无填充）  |
+|   [clearRect()](#clearRect) |   在给定的矩形内清除指定的像素    |
 
 
 <div id= "rect"> </div>
 
-#### 创建矩形 -- rect()
+#### 创建矩形--rect()
 
 定义：rect() 方法创建矩形。
 
@@ -106,7 +106,7 @@ ctx.rect(20,20,150,100); // 设置坐标
 
 ctx.stroke(); // 绘制已经定义的点
 ```
-
+<div id = "rectDemo"></div>
 可以通过 `strokeStyle` 设置或返回用于笔触的颜色、渐变或模式和 `lineWidth` 设置或返回当前的线条宽度。
 
 设置一个**红色线框矩形**，线条的宽度为 **6** 像素。
@@ -152,7 +152,7 @@ ctx.stroke();
 
 <div id="fillRect"></div>
 
-#### “被填充”的矩形 --- fillRect()
+#### “被填充”的矩形--fillRect()
 
 定义：fillRect() 方法绘制“已填色”的矩形。默认的填充颜色是黑色。
 
@@ -204,6 +204,56 @@ ctx.fillRect(20,20,150,100);
 显示效果
 
 <div align=center><img src="/canvas文档图片/red000.png" alt="red000"></div>
+
+<div id="strokeRect"></div>
+
+#### 绘制矩形"无填充"--strokeRect
+
+定义: strokeRect() 方法绘制矩形（不填色）。笔触的默认颜色是黑色。
+
+> 改方法与[rect()](#rect)基本相同
+
+##### strokeRect的javaScript的语法
+
+```javaScript {.line-numbers}
+context.strokeRect(x,y,width,height);
+```
+
+```javaScript {.line-numbers}
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.strokeRect(20,20,150,100);
+```
+
+显示效果
+
+<div align=center><img src="/canvas文档图片/strokeRect.png" alt="strokeRect"></div>
+
+同样和 [rect](#rectDemo) 一样可以通过 `strokeStyle` 设置或返回用于笔触的颜色、渐变或模式和 `lineWidth` 设置或返回当前的线条宽度。
+
+<div id="clearRect"></div>
+
+#### 清空矩形--clearRect
+定义: clearRect() 方法清空给定矩形内的指定像素。
+
+##### clearRect的JavaScript语法
+
+```JavaScript {.line-numbers}
+context.clearRect(x,y,width,height);
+```
+
+```JavaScript {.line-numbers}
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="red";
+ctx.fillRect(0,0,300,150);
+ctx.clearRect(20,20,100,50);
+```
+
+显示效果
+
+<div align=center><img src="/canvas文档图片/clearRect.png" alt="clearRect"></div>
+
 
 ## 参考文献
 
