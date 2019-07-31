@@ -4,7 +4,7 @@
 
 [index.html](https://steventang1994.github.io/html5--canvas-note/) 方便手机访问，没有默认打开侧面菜单，**PC端点左下角可以打开侧边菜单**
 
-[cnavas基础](https://github.com/StevenTang1994/html5--canvas-note/blob/master/README.md)md原生文件
+[cnavas基础](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E5%9F%BA%E7%A1%80.md)md原生文件
 
 ## 更新日志 2019-07-31 22: 02
 
