@@ -245,7 +245,7 @@ context.clearRect(x,y,width,height);
 ```JavaScript {.line-numbers}
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
-ctx.fillStyle="red";
+ctx.fillStyle="green";
 ctx.fillRect(0,0,300,150);
 ctx.clearRect(20,20,100,50);
 ```
@@ -254,6 +254,29 @@ ctx.clearRect(20,20,100,50);
 
 <div align=center><img src="/canvas文档图片/clearRect.png" alt="clearRect"></div>
 
+## 矩形动画
+
+思路: 使用延时函数---setTimeout，来控制矩形的位置和颜色等。
+
+演示: 动画矩形
+```javascript {.line-numbers}
+var c = document.getElementById('myCanvas');
+var ctx = c.getContext('2d');
+i = 30;
+function demo() {
+    if (i>1000){
+        clearInterval(box);
+    }else{
+        i++;
+        ctx.clearRect(0,0,1077,500); // 全局清空像素
+        ctx.beginPath();
+        ctx.strokeStyle ="green";
+        ctx.rect(i,0,300,150);
+        ctx.stroke();
+    }
+}
+var box = setInterval (demo,10);
+```
 
 ## 参考文献
 

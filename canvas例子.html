@@ -12,17 +12,18 @@
         padding: 0;
     }
     .box{
-        width: 80%;
+        width: 90%;
         height: 500px;
-        margin-left: 10%;
+        margin-left: 5%;
     }
 </style>
 <body>
     <div class="box">
-        <canvas id="mycanvas" width="1077px" height="500" style="border: 1px solid #000"></canvas>
+        <canvas id="mycanvas" width="200px" height="200" style="border: 1px solid #000"></canvas>
     </div>
 </body>
 <script>
+    console.log("1");
     var c = document.getElementById("mycanvas");
     var ctx = c.getContext('2d');
     // ctx.fillStyle="#0000ff";
@@ -62,8 +63,23 @@
     //ctx.strokeRect(20,20,150,100);
 
     // clearRect 清楚矩形
-    ctx.fillStyle="green";
-    ctx.fillRect(30,30,300,150);
-    ctx.clearRect(50,50,100,50);
+    // ctx.fillStyle="green";
+    //ctx.clearRect(50,50,100,50);
+
+    //动画演示
+    i = 30;
+    function demo() {
+        if (i>100){
+            clearInterval(box);
+        }else{
+            i++;
+            ctx.beginPath();
+            ctx.clearRect(0,0,1000,200);
+            ctx.strokeStyle ="green";
+            ctx.rect(i,0,50,30);
+            ctx.stroke();
+        }
+    }
+    var box = setInterval (demo,10);
 </script>
 </html>
