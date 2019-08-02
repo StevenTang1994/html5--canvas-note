@@ -6,14 +6,15 @@
 
 [cnavas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E5%9F%BA%E7%A1%80.md)md原生文件
 
-## 更新日志 2019-08-02 00: 16
-1. [新增 canvas 动画效果](http://htmlpreview.github.io/?https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E4%BE%8B%E5%AD%90.html)
 
 ## 更新日志 2019-08-02 23: 59
 1. 修改目录
     1. canvas基础 改为 canvas矩形
 
 >  朋友来玩 放纵一天
+
+## 更新日志 2019-08-02 00: 16
+1. [新增 canvas 动画效果](http://htmlpreview.github.io/?https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E4%BE%8B%E5%AD%90.html)
  
 ## 更新日志 2019-07-31 22: 02
 
