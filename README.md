@@ -6,6 +6,10 @@
 
 [cnavas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E5%9F%BA%E7%A1%80.md)md原生文件
 
+## 更新日志 2019-08-02 23: 54
+1. 新增
+    1. [新增 canvas 线.md]()
+    2. [新增 canvas 线.html]()
 
 ## 更新日志 2019-08-02 23: 59
 1. 修改目录
