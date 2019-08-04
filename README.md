@@ -4,7 +4,10 @@
 
 [cnavas 矩形文档](https://steventang1994.github.io/html5--canvas-note/) 方便手机访问，没有默认打开侧面菜单，**PC端点左下角可以打开侧边菜单**
 
-[cnavas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E5%9F%BA%E7%A1%80.md)md原生文件
+[cnavas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%9F%A9%E5%BD%A2.md)
+
+[cnavas 线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%BA%BF.md)
+              
 
 ## 更新日志 2019-08-04 23: 54
 1. 新增
