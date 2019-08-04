@@ -70,18 +70,77 @@ Canvas 对象表示一个 HTML 画布元素 - `canvas`。它没有自己的行�
 
 ### 线条
 
+#### 语法定义
 - moveTo(x, y)用来定义起始坐标。
 - lineTo(x, y)用来定义结束坐标。
 
-```javascript {.line-numbers}
+#### 例
+```JavaScript {.line-numbers}
     var c = document.getElementById("mycanvas");
     var ctx = c.getContext('2d');
     ctx.moveTo(50, 60);
     ctx.lineTo(200, 100);
     ctx.stroke();
 ```
+如图：
+<div align=center><img src="/canvas文档图片/线.png" alt="线"/></div>
 
-画多条颜色的时候
+画多条线时，需要用到 `beginPath` 开始一条路径，或重置当前的路径。
+
+```JavaScript {.line-numbers}
+    var c = document.getElementById("mycanvas");
+    var ctx = c.getContext('2d');
+    ctx.moveTo(50, 60);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(300, 300);
+    ctx.stroke();
+```
+如图：
+<div align=center><img src="/canvas文档图片/beginPath线.png" alt="beginPath线"/></div>
+
+可以用`lineWidth`（改变线条的宽度）和`strokeStyle`（改变线条的颜色）
+
+```JavaScript {.line-numbers}
+var c = document.getElementById("mycanvas");
+var ctx = c.getContext('2d');
+ctx.lineWidth = "5";  //设置线条的宽度
+ctx.strokeStyle = "green";  //设置线条的颜色
+ctx.moveTo(50, 60);
+ctx.lineTo(200, 100);
+ctx.stroke();
+```
+如图：
+<div align=center><img src="/canvas文档图片/颜色和宽度.png" alt="颜色和宽度"/></div>
+
+>注意： 这里如果多条线段，第一条设置了属性，第二条会继承第一条的属性，可以覆盖
+
+```JavaScript {.line-numbers}
+var c = document.getElementById("mycanvas");
+var ctx = c.getContext('2d');
+ctx.lineWidth = "5"; //第一条设置宽度
+ctx.strokeStyle = "green";
+ctx.moveTo(50, 60);
+ctx.lineTo(200, 100);
+ctx.stroke();
+
+// 第二条不设置
+ctx.beginPath();
+ctx.strokeStyle = "red";
+ctx.moveTo(100, 100);
+ctx.lineTo(300, 300);
+ctx.stroke();
+```
+
+如图：
+<div align=center><img src="/canvas文档图片/线段继承属性.png" alt="线段继承属性"/></div>
+
+> 继承了第一条线的宽度
+
+明天 closePath()、二次/三次贝塞尔曲线……
 
 ## 参考文献
 
