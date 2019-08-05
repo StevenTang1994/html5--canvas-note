@@ -8,7 +8,7 @@
 
 [canvas 线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%BA%BF.md)
               
-
+[canvas 贝塞尔曲线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF.md)
 ## 更新日志 2019-08-05 23: 42
 1. 新增
     1. 完善 canvas 线部分 closePath()
