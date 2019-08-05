@@ -2,12 +2,18 @@
 
 讲道理*日更*
 
-[cnavas 矩形文档](https://steventang1994.github.io/html5--canvas-note/) 方便手机访问，没有默认打开侧面菜单，**PC端点左下角可以打开侧边菜单**
+[canvas 矩形文档](https://steventang1994.github.io/html5--canvas-note/) 方便手机访问，没有默认打开侧面菜单，**PC端点左下角可以打开侧边菜单**
 
-[cnavas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%9F%A9%E5%BD%A2.md)
+[canvas 矩形](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%9F%A9%E5%BD%A2.md)
 
-[cnavas 线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%BA%BF.md)
+[canvas 线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E7%BA%BF.md)
               
+
+## 更新日志 2019-08-05 23: 42
+1. 新增
+    1. 完善 canvas 线部分 closePath()
+    2. 新增 canvas 贝塞尔曲线
+        1. 基本写完 二次/三次贝塞尔曲线
 
 ## 更新日志 2019-08-04 23: 54
 1. 新增

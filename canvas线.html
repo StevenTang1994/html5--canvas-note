@@ -41,16 +41,34 @@
     // ctx.stroke();
 
     // 颜色和线条宽度
-    ctx.lineWidth = "5";
-    ctx.moveTo(50, 60);
-    ctx.lineTo(200, 100);
-    ctx.strokeStyle = "green";
-    ctx.stroke();
+    // ctx.lineWidth = "5";
+    // ctx.moveTo(50, 60);
+    // ctx.lineTo(200, 100);
+    // ctx.strokeStyle = "green";
+    // ctx.stroke();
 
+    // ctx.beginPath();
+    // ctx.strokeStyle = "red";
+    // ctx.moveTo(100, 100);
+    // ctx.lineTo(300, 300);
+    // ctx.stroke();
+
+    //closePath 
+    // ctx.beginPath();
+    // ctx.moveTo(200,200);
+    // ctx.lineTo(200,300);
+    // ctx.lineTo(300,300);
+    // ctx.closePath();
+    // ctx.stroke();
+    
+    // 颜色三角形
     ctx.beginPath();
-    ctx.strokeStyle = "red";
-    ctx.moveTo(100, 100);
-    ctx.lineTo(300, 300);
+    ctx.moveTo(200,200);
+    ctx.lineTo(200,300);
+    ctx.lineTo(300,300);
+    ctx.closePath();
     ctx.stroke();
+    ctx.fillStyle="green";
+    ctx.fill();
 </script>
 </html>
