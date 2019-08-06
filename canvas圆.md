@@ -67,7 +67,39 @@ Canvas 对象表示一个 HTML 画布元素 - `canvas`。它没有自己的行�
 如图：
 <div align=center><img src="/canvas文档图片/十字坐标系与画布坐标系的区别.png" alt="十字坐标系与画布坐标系的区别"/></div>
 
+### 圆
 
+定义: arc() 方法创建弧/曲线（用于创建圆或部分圆）。
+
+#### JavaScript 语法
+
+```JavaScript {.line-numbers}
+context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+
+//                 x : 圆的中心的 x 坐标。
+//                 y : 圆的中心的 y 坐标。
+//                 r : 圆的半径。
+//             sAngle: 起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
+//             eAngle: 结束角，以弧度计。
+//   counterclockwise:	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+```
+
+<div align=center><img src="/canvas文档图片/arc.png" alt="arc"/></div>
+
+- 中心：arc(100,75,50,0*Math.PI,1.5*Math.PI)
+- 起始角：arc(100,75,50,0,1.5*Math.PI)
+- 结束角：arc(100,75,50,0*Math.PI,1.5*Math.PI)
+
+例子
+``` JavaScript {.line-numbers}
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.beginPath();
+ctx.arc(100,75,50,0,2*Math.PI);
+ctx.stroke();
+```
+
+<div align=center><img src="/canvas文档图片/圆demo.png" alt="圆demo"/></div>
 
 
 ## 参考文献

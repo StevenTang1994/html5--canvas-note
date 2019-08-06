@@ -27,16 +27,8 @@
     var c = document.getElementById("mycanvas");
     var ctx = c.getContext('2d');
 
-    // 二次贝塞尔曲线
     ctx.beginPath();
-    ctx.moveTo(200,200);
-    ctx.quadraticCurveTo(300,200,400,20);
-    ctx.stroke();
-
-    // 三次贝塞尔曲线
-    ctx.beginPath();
-    ctx.moveTo(20,20);
-    ctx.bezierCurveTo(20,100,200,100,200,20);
+    ctx.arc(100,75,50,0,2*Math.PI);
     ctx.stroke();
 </script>
 </html>
