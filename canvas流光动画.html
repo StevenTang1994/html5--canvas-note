@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0px;
+        }
+        .box{
+            width: 100%;
+            height: 500px;
+            background-image: url("./canvas文档图片/腾讯云图片.png");
+            background-position: top center;
+            background-repeat: no-repeat;
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-size: 1920px 500px;
+        }
+        .canvas{
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+    </style>
+<body>
+    <div class="box">
+    </div>
+    <div class="canvas">
+        <canvas id="myCanvas" width="1920" height="500"></canvas>
+    </div>
+
+    <div style="width: 100%;height: 1000px;">
+        1
+    </div>
+    <div style="width: 500px;border: 1px solid;height: 500px;">
+        <canvas id= "myCanvas1"></canvas>
+    </div>
+</body>
+<script>
+    function drawCanvas4() {
+        let c = document.getElementById("myCanvas");
+        let context = c.getContext("2d");
+        let width = c.width;
+        let height = c.height;
+        let xPoints  = [{x:131,y:0,r:1.5},{x:1222,y:0,r:1.5}];
+        let yPoints  = [{x:682,y:330,r:1.5},{x:682,y:330,r:1.5}];
+        
+        function xPoint () {
+            for(let i = 0; i < xPoints.length; i++){
+                context.lineWidth = 0;
+                context.shadowBlur = 0;
+                context.shadowColor = 'rgba(2, 179, 253,1)';
+                context.fillStyle = 'rgba(2, 179, 253,1)';
+                context.fill();//画实心圆
+                context.beginPath();
+                context.arc(xPoints[i].x, xPoints[i].y, xPoints[i].r, 0, Math.PI * 2);
+                context.stroke();
+            }
+            if (xPoints[0].y < 500) {
+                xPoints[0].x += 2;
+                xPoints[0].y += 1.98;
+                xPoints[1].x -= 2;
+                xPoints[1].y += 1.98;
+            } else {
+                xPoints  = [{x:131,y:0,r:1.5},{x:1222,y:0,r:1.5}];
+            }
+        }
+        function render() {
+          //默认值为source-over
+          let prev = context.globalCompositeOperation;
+          //只显示canvas上原图像的重叠部分
+          context.globalCompositeOperation = 'destination-in';
+          //设置主canvas的绘制透明度
+          context.globalAlpha = 0.9;
+          //这一步目的是将canvas上的图像变的透明
+          context.fillRect(0, 0, width, height);
+          //在原图像上重叠新图像
+          context.globalCompositeOperation = prev;
+          //在主canvas上画新圆
+          xPoint();
+          if (width !== 0) {
+            //在动画没有结束前，递归渲染
+            window.requestAnimationFrame(render);
+          }
+        }
+        window.requestAnimationFrame(render);
+    }
+    drawCanvas4();
+</script>
+</html>
