@@ -30,6 +30,11 @@
             top: 0;
             left: 0;
             overflow: hidden;
+            text-align: center;
+        }
+        #myCanvas{
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 <body>
@@ -47,16 +52,30 @@
     </div>
 </body>
 <script>
-    function drawCanvas4() {
+    let MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+    let box = document.getElementsByClassName("canvas")[0];
+
+    var callback = function drawCanvas4(e) {
+        console.log(e);
         let c = document.getElementById("myCanvas");
         let context = c.getContext("2d");
         let width = c.width;
         let height = c.height;
-        let xPoints  = [{x:131,y:0,r:1.5},{x:1222,y:0,r:1.5}];
-        let yPoints  = [{x:682,y:330,r:1.5},{x:682,y:330,r:1.5}];
+        let xPoints;
+        let yPoints;
+        let num = 0
+        let boxWidth = box.clientWidth;
+        num = (1903 - boxWidth)/2;
+        xPoints  = [{x:408-num,y:0,r:1.5},{x:1500-num,y:0,r:1.5}];
+        yPoints  = [{x:682,y:330,r:1.5},{x:682,y:330,r:1.5}];
+        
         
         function xPoint () {
             for(let i = 0; i < xPoints.length; i++){
+
+                boxWidth = box.clientWidth;
+                num = (1903 - boxWidth)/2;
+
                 context.lineWidth = 0;
                 context.shadowBlur = 0;
                 context.shadowColor = 'rgba(2, 179, 253,1)';
@@ -66,35 +85,39 @@
                 context.arc(xPoints[i].x, xPoints[i].y, xPoints[i].r, 0, Math.PI * 2);
                 context.stroke();
             }
+            s();
+        }
+
+        function s () {
             if (xPoints[0].y < 500) {
                 xPoints[0].x += 2;
                 xPoints[0].y += 1.98;
-                xPoints[1].x -= 2;
-                xPoints[1].y += 1.98;
+                // xPoints[1].x -= 2;
+                // xPoints[1].y += 1.98;
             } else {
-                xPoints  = [{x:131,y:0,r:1.5},{x:1222,y:0,r:1.5}];
+                xPoints  = [{x:408-num,y:0,r:1.5},{x:1500-num,y:0,r:1.5}];
             }
         }
+
         function render() {
-          //默认值为source-over
           let prev = context.globalCompositeOperation;
-          //只显示canvas上原图像的重叠部分
           context.globalCompositeOperation = 'destination-in';
-          //设置主canvas的绘制透明度
           context.globalAlpha = 0.9;
-          //这一步目的是将canvas上的图像变的透明
           context.fillRect(0, 0, width, height);
-          //在原图像上重叠新图像
           context.globalCompositeOperation = prev;
           //在主canvas上画新圆
           xPoint();
           if (width !== 0) {
-            //在动画没有结束前，递归渲染
             window.requestAnimationFrame(render);
           }
         }
         window.requestAnimationFrame(render);
     }
-    drawCanvas4();
+    var observer = new MutationObserver(callback);
+    observer.observe(box, { attributes: true, attributeFilter: ['clientWidth'], attributeOldValue: true });
+    observer.disconnect();
+    observer.takeRecords();
+    callback();
+
 </script>
 </html>

@@ -10,8 +10,10 @@
               
 [canvas 贝塞尔曲线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF.md)
 
-## 更新日志 2019-08-08 23: 55
-无
+## 更新日志 2019-08-19 00: 30
+老家有事情,处理事情去了,没有带电脑
+1. 新增
+    1. canvas 动画(文档下次补)
 
 ## 更新日志 2019-08-07 23: 33
 1. 新增
