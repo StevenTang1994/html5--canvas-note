@@ -67,8 +67,59 @@ requestAnimationFrame： window.requestAnimationFrame() 告诉浏览器——你
 
 MutationObserver
 ```JavaScript
-// 首先获取box的宽度
+// 首先获取canvas
+// 在利用 getContext()方法返回一个用于在画布上绘图的环境。
+let c = document.getElementById("myCanvas");
+let context = c.getContext("2d");
+// 获取需要用到的公用属性 canvas的长度和宽度
+let width = c.width;
+let height = c.height;
+// 初始化坐标
+let xPoints;
+let yPoints;
+xPoints  = [{x:408,y:0,r:1.5},{x:1500,y:0,r:1.5}];
 
+// 开始在画布上画点
+function xPoint () {
+    for(let i = 0; i < xPoints.length; i++){
+
+        boxWidth = box.clientWidth;
+        num = (1903 - boxWidth)/2;
+
+        context.lineWidth = 0;
+        context.shadowBlur = 0;
+        context.shadowColor = 'rgba(2, 179, 253,1)';
+        context.fillStyle = 'rgba(2, 179, 253,1)';
+        context.fill();//画实心圆
+        context.beginPath();
+        context.arc(xPoints[i].x, xPoints[i].y, xPoints[i].r, 0, Math.PI * 2);
+        context.stroke();
+    }
+    s();
+}
+
+// 设置运动的速度,当Y坐标到了500的时候,在初始化xPoints坐标
+function s () {
+    if (xPoints[0].y < 500) {
+        xPoints[0].x += 2;
+        xPoints[0].y += 1.98;
+    } else {
+        xPoints  = [{x:408-num,y:0,r:1.5},{x:1500-num,y:0,r:1.5}];
+    }
+}
+// 利用 requestAnimationFrame 重复执行该动画
+function render() {
+    let prev = context.globalCompositeOperation;
+    context.globalCompositeOperation = 'destination-in';
+    context.globalAlpha = 0.9;
+    context.fillRect(0, 0, width, height);
+    context.globalCompositeOperation = prev;
+    //在主canvas上画新圆
+    xPoint();
+    if (width !== 0) {
+    window.requestAnimationFrame(render);
+    }
+}
 ```
 
 ## 参考文献
