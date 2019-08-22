@@ -10,6 +10,11 @@
               
 [canvas 贝塞尔曲线](https://github.com/StevenTang1994/html5--canvas-note/blob/master/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF.md)
 
+[canvas 流光动画](https://github.com/StevenTang1994/html5--canvas-note/blob/master/canvas%E6%B5%81%E5%85%89%E5%8A%A8%E7%94%BB.md)
+## 更新日志 2019-08-22 23: 37
+1. 新增
+    1. 补全 canvas 动画 (完成)
+
 ## 更新日志 2019-08-20 07: 45
 1. 新增
     1. 补全 canvas 动画(未完成)
